@@ -11,6 +11,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWeaver.Fody", "MyWeaver.Fody\MyWeaver.Fody.csproj", "{2FC61D49-F4BE-4024-B4FF-29F4DEEB9427}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FodyRepro.FSharp", "FodyRepro.FSharp\FodyRepro.FSharp.fsproj", "{20E866D8-7B5B-47B4-AC51-EA916BD02074}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2FC61D49-F4BE-4024-B4FF-29F4DEEB9427} = {2FC61D49-F4BE-4024-B4FF-29F4DEEB9427}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{66156C5C-786F-44A5-8702-EB5FB0C07691}"
 	ProjectSection(SolutionItems) = preProject
