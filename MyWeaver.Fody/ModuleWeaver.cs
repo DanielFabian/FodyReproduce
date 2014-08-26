@@ -40,6 +40,7 @@ namespace Weavers
 
             LogInfo("Info does not show up in \"Error List\"");
             LogWarning("Warning does not show up in \"Error List\"");
+            LogWarningPoint("Warning does show up in \"Error List\"", new SequencePoint(new Document(" ")));
             //LogError("Error does not show up in \"Error List\", but it causes the build to fail");
         }
     }
