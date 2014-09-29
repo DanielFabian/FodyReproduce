@@ -38,10 +38,16 @@ namespace Weavers
         {
             ModuleDefinition.Types.Add(new TypeDefinition("MyNamespace", "MyType", TypeAttributes.Public));
 
-            LogInfo("Info does not show up in \"Error List\"");
-            LogWarning("Warning does not show up in \"Error List\"");
-            LogWarningPoint("Warning does show up in \"Error List\"", new SequencePoint(new Document(" ")));
-            //LogError("Error does not show up in \"Error List\", but it causes the build to fail");
+            // Expected behaviour:
+            // Both languages should show the warnings identically, i.e.:
+            // - LogWarning should show warnings in both languages
+            // - LogWarningPoint without a location (presumably) should not show any line or column info in F#
+            // - LogError should be visible in F# and not only break the build.
+
+            LogInfo("Info does not show up in either language");
+            LogWarning("Warning does not show up in F#, but does show in C#"); 
+            LogWarningPoint("Warning does show up in both languages, but has line/column info in F#", new SequencePoint(new Document(" ")));
+            LogError("Error does not show up in F#, but it causes the build to fail. C# it shows up and breaks the build.");
         }
     }
 }
